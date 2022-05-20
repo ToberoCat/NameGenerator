@@ -11,7 +11,7 @@ public class DungeonNameGenerator extends AbstractGenerator {
         String[] namings1 = null, namings2, namings3 = null, namings4 = null;
         namings2 = readArray("/names/dungeon/nm2.json");
 
-        for (int i = 0; i < amount; i++) {
+        while (names.size() < amount) {
             int second = random.nextInt(namings2.length);
 
             if (random.nextBoolean()) {

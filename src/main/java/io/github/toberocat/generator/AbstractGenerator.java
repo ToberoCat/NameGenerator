@@ -3,6 +3,7 @@ package io.github.toberocat.generator;
 import io.github.toberocat.data.FileReader;
 import io.github.toberocat.jackson.JsonUtility;
 
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -16,9 +17,9 @@ public abstract class AbstractGenerator {
     }
 
     public String[] generateNames(int amount, Random random) {
-        LinkedList<String> names = new LinkedList<>();
+        LinkedHashSet<String> names = new LinkedHashSet<>();
 
-        for (int i = 0; i < amount; i++) {
+        while (names.size() < amount) {
             names.add(generateName(random));
         }
 
